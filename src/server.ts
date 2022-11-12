@@ -17,5 +17,5 @@ app.use(express.json())
 app.use("/orders", orderRoutes)
 
 app.listen(config.port, () => {
-  return logger.info(`Express is listening at http://localhost:${config.port}`)
+  return logger.info(`Server is listening on port ${config.port}`)
 })
