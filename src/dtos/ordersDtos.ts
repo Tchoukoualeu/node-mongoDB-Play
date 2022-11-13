@@ -10,7 +10,6 @@ export const orderDto = z.object({
   }),
   lineItems: z.array(
     z.object({
-      _id: z.string(),
       sku: z.string(),
       name: z.string(),
     })
@@ -37,3 +36,7 @@ export const requestUpdateOrderByIdDto = z.object({
 export type requestUpdateOrderById = z.infer<typeof requestUpdateOrderByIdDto>
 
 export type StateType = "OPEN" | "IN_PROGRESS" | "COMPLETE"
+
+export const requestOrderByIdDto = z.object({
+  id: z.string(),
+})

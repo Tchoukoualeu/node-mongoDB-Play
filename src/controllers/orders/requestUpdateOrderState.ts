@@ -38,7 +38,7 @@ class requestUpdateOrderState {
         { new: true }
       )
 
-      return res.status(200).send(updatedOrder)
+      return res.status(201).send(updatedOrder)
     } catch (err) {
       logger.warn(err, "Fail to add order")
 
