@@ -12,6 +12,8 @@ class requestUpdateOrderState {
   async create(req: TypedRequestBody<requestUpdateOrderById>, res: Response) {
     const { _id } = req.body
 
+    console.log("HERE")
+
     const order = await OrderModel.findById({ _id })
 
     const isRequestValid = validateOrderState(req.body, order?.currentState)
@@ -38,7 +40,7 @@ class requestUpdateOrderState {
         { new: true }
       )
 
-      return res.status(200).send(updatedOrder)
+      return res.status(201).send(updatedOrder)
     } catch (err) {
       logger.warn(err, "Fail to add order")
 
