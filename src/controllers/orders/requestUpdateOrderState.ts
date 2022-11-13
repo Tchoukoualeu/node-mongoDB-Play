@@ -12,8 +12,6 @@ class requestUpdateOrderState {
   async create(req: TypedRequestBody<requestUpdateOrderById>, res: Response) {
     const { _id } = req.body
 
-    console.log("HERE")
-
     const order = await OrderModel.findById({ _id })
 
     const isRequestValid = validateOrderState(req.body, order?.currentState)
